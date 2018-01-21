@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DaggerAndroidExample</string>
+
+    <!--login screen start-->
+    <string name="login_title">Login</string>
+    <string name="login_name">Name:</string>
+    <string name="login_password">Password:</string>
+    <string name="login_button_enter">Enter</string>
+    <!--login screen end-->
+
+
+</resources>
