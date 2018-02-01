@@ -31,7 +31,7 @@ public class MainActivity extends DaggerAppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setErrMess(message);
-        //Fnfc
+        System.out.print("Hello");
     }
 
     @Override
