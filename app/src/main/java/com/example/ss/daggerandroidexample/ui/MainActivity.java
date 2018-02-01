@@ -24,13 +24,14 @@ public class MainActivity extends DaggerAppCompatActivity implements MainView {
     InteractiveMain interactiveMain;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setErrMess(message);
-        
+        //Fnfc
     }
 
     @Override
