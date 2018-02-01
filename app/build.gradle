@@ -28,6 +28,16 @@ android {
             targetCompatibility JavaVersion.VERSION_1_8
         }
     }
+    ext{
+        daggerVersion = '2.14.1'
+        roomVersion = '1.0.0'
+        rxAndroidVersion = '2.0.1'
+        rxJavaVersion = '2.1.0'
+        retrofitVersion = '2.3.0'
+        adapterForRetrofit2 = '2.3.0'
+        gsonVersion = '2.7'
+        gsonForRetrofit2 = '2.3.0'
+    }
 
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -36,13 +46,17 @@ android {
         testImplementation 'junit:junit:4.12'
         androidTestImplementation 'com.android.support.test:runner:1.0.1'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-        compile 'com.google.dagger:dagger:2.14.1'
-        compile 'com.google.dagger:dagger-android-support:2.14.1'
-        annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
-        annotationProcessor 'com.google.dagger:dagger-android-processor:2.14.1'
-        compile 'android.arch.persistence.room:runtime:1.0.0'
-        annotationProcessor 'android.arch.persistence.room:compiler:1.0.0'
-        implementation 'android.arch.persistence.room:rxjava2:1.0.0-alpha5'
-        androidTestImplementation 'android.arch.core:core-testing:1.0.0-alpha5'
+        compile "com.google.dagger:dagger:$daggerVersion"
+        compile "com.google.dagger:dagger-android-support:$daggerVersion"
+        annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
+        annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+        compile "android.arch.persistence.room:runtime:$roomVersion"
+        annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
+        compile "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+        compile "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+        compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+        compile "com.squareup.retrofit2:adapter-rxjava2:$adapterForRetrofit2"
+        compile "com.google.code.gson:gson:$gsonVersion"
+        compile "com.squareup.retrofit2:converter-gson:$gsonForRetrofit2"
     }
 }
