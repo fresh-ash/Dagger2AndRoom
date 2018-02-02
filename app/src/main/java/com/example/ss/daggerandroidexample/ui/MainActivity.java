@@ -3,6 +3,7 @@ package com.example.ss.daggerandroidexample.ui;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.example.ss.daggerandroidexample.R;
 import com.example.ss.daggerandroidexample.data.ResponseIP;
@@ -10,6 +11,8 @@ import com.example.ss.daggerandroidexample.databinding.ActivityMainBinding;
 
 import com.example.ss.daggerandroidexample.dbinding.ErrorMessage;
 import com.example.ss.daggerandroidexample.retrofit.ApiHttpbin;
+
+import java.io.IOException;
 
 import javax.inject.Inject;
 
@@ -38,11 +41,14 @@ public class MainActivity extends DaggerAppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setErrMess(message);
+        TextView textView = (TextView) findViewById(R.id.login_err_mess);
         Call<ResponseIP> responseIPCall = apiHttpbin.getIP();
         responseIPCall.enqueue(new Callback<ResponseIP>() {
             @Override
             public void onResponse(Call<ResponseIP> call, Response<ResponseIP> response) {
-                Log.i("Info", response.body().ip);
+               textView.setText(response.body().getIp());
+
+
             }
 
             @Override
@@ -50,6 +56,7 @@ public class MainActivity extends DaggerAppCompatActivity implements MainView {
 
             }
         });
+
     }
 
     @Override

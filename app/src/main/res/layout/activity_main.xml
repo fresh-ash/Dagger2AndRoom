@@ -20,6 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textColor="@color/colorAccent"
+            android:text="@{errMess.mess}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
